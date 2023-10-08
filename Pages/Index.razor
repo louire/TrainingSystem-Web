@@ -5,3 +5,72 @@
     Holi :D
 </p>
 
+<DxFormLayout>
+    <DxFormLayoutItem Caption="Fecha de Entrenamiento: ">
+        <DxDateEdit @bind-Date="@TrainingDate" />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Hora: ">
+        <DxTimeEdit @bind-Time="@TrainingHour" />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Duracion: ">
+        <DxTextBox @bind-Text="@Duration" />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Area Tematica: ">
+        <DxTextBox @bind-Text="@ThemeArea" />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Agente: ">
+        <DxTextBox @bind-Text=@Agent />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Tipo de Entrenamiento: ">
+        <DxTextBox @bind-Text=@TrainmentType />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Modalidad: ">
+        <DxTextBox @bind-Text=@Modality />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Municipio: ">
+        <DxTextBox @bind-Text=@City />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Estado: ">
+        <DxTextBox @bind-Text=@State />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Instructor: ">
+        <DxTextBox @bind-Text=@Instructor />
+    </DxFormLayoutItem>
+
+    <DxFormLayoutItem Caption=" ">
+        <DxButton Text="Establecer entrenamiento" />
+    </DxFormLayoutItem>
+</DxFormLayout>
+
+<br />
+ <DxFormLayout>
+     <DxFormLayoutItem Caption="Entrenamiento Dado" >
+         <DxTextBox @bind-Text="Entrenamiento" />
+</DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Empleado: ">
+        <DxTextBox @bind-Text=@Empleado />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption=" ">
+        <DxButton Text="Escanear" />
+    </DxFormLayoutItem>
+ </DxFormLayout>
+
+<br />
+<DxGrid>
+   
+</DxGrid>
+
+@code {
+    string Duration { get; set; } = "2 horas";
+    DateTime TrainingDate { get; set; } = DateTime.Now;
+    TimeOnly TrainingHour { get; set; } = TimeOnly.FromDateTime(DateTime.Now);
+    string ThemeArea { get; set; } = "EHS";
+    string Agent { get; set; } = "Externo";
+    string TrainmentType { get; set; } = "Masivo";
+    string Modality { get; set; } = "Virtual";
+    string City { get; set; } = "Matamoros";
+    string State { get; set; } = "Tamaulipas";
+    string Instructor { get; set; } = "Laura";
+    string Entrenamiento { get; set; } = "Recipientes sujetos a presion";
+    string Empleado { get; set; } = "Loui Recio";
+}
