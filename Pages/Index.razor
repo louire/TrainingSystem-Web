@@ -1,17 +1,22 @@
 ﻿@page "/"
-
 <h2 class="pb-2">Sistema de Asistencia de Entrenamientos</h2>
-<p class="pb-2 mw-1100">
-    Holi :D
-</p>
 
 <DxFormLayout>
     <DxFormLayoutItem Caption="Fecha de Entrenamiento: ">
-        <DxDateEdit @bind-Date="@TrainingDate" />
+        <DxDateEdit @bind-Date="@TrainingDate"
+                    TimeSectionVisible="true"
+                    CssClass="cw-320" />
+        <p class="demo-text cw-320 mt-2">
+            Date: <b>@TrainingDate.ToString("dddd, dd MMMM yyyy HH:mm:ss")</b>
+        </p>
+
+        @code {
+        DateTime DateTimeValue { get; set; } = DateTime.Now;
+        }
     </DxFormLayoutItem>
-    <DxFormLayoutItem Caption="Hora: ">
-        <DxTimeEdit @bind-Time="@TrainingHour" />
-    </DxFormLayoutItem>
+
+    <br/>
+
     <DxFormLayoutItem Caption="Duracion: ">
         <DxTextBox @bind-Text="@Duration" />
     </DxFormLayoutItem>
@@ -56,6 +61,14 @@
  </DxFormLayout>
 
 <br />
+
+<DxFormLayout>
+
+
+
+</DxFormLayout>
+
+
 <DxGrid>
    
 </DxGrid>
@@ -73,4 +86,7 @@
     string Instructor { get; set; } = "Laura";
     string Entrenamiento { get; set; } = "Recipientes sujetos a presion";
     string Empleado { get; set; } = "Loui Recio";
+
+
+
 }
